@@ -3,341 +3,561 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mohammad Uzair Shah | Portfolio</title>
-
+  <title>Mohammad Uzair Shah | Sustainability Analytics Portfolio</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --bg: #f6f8fb;
+      --ink: #0f172a;
+      --muted: #475569;
+      --muted-2: #64748b;
+      --card: #ffffff;
+      --line: #e2e8f0;
+      --dark: #07111f;
+      --accent: #0f766e;
+      --accent-2: #2563eb;
+      --accent-3: #7c3aed;
+      --accent-soft: #ccfbf1;
+      --blue-soft: #dbeafe;
+      --purple-soft: #ede9fe;
+      --shadow: 0 20px 50px rgba(15, 23, 42, 0.10);
+      --radius: 24px;
     }
 
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: Arial, sans-serif;
-      background: #f7f8fa;
-      color: #1f2937;
-      line-height: 1.6;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(15, 118, 110, 0.13), transparent 32%),
+        radial-gradient(circle at top right, rgba(37, 99, 235, 0.12), transparent 30%),
+        var(--bg);
+      line-height: 1.65;
     }
+
+    a { color: inherit; }
+    .container { width: min(1120px, 88%); margin: 0 auto; }
 
     header {
-      background: white;
-      padding: 20px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      background: rgba(255, 255, 255, 0.86);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.75);
     }
 
-    header h2 {
-      color: #111827;
-      font-size: 22px;
-    }
-
-    nav a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: #374151;
-      font-weight: 600;
-    }
-
-    nav a:hover {
-      color: #2563eb;
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 40px;
-      align-items: center;
-      padding: 80px 8%;
-      background: linear-gradient(135deg, #eef2ff, #ffffff);
-    }
-
-    .hero h1 {
-      font-size: 48px;
-      color: #111827;
-      margin-bottom: 15px;
-    }
-
-    .hero h3 {
-      font-size: 22px;
-      color: #2563eb;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 18px;
-      max-width: 700px;
-      margin-bottom: 30px;
-    }
-
-    .buttons a {
-      display: inline-block;
-      margin-right: 12px;
-      padding: 12px 22px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 700;
-    }
-
-    .primary {
-      background: #2563eb;
-      color: white;
-    }
-
-    .secondary {
-      border: 2px solid #2563eb;
-      color: #2563eb;
-    }
-
-    .profile-card {
-      background: white;
-      padding: 25px;
-      border-radius: 20px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.10);
-      text-align: center;
-    }
-
-    .profile-card img {
-      width: 240px;
-      height: 240px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 5px solid #e5e7eb;
-      margin-bottom: 20px;
-    }
-
-    section {
-      padding: 70px 8%;
-    }
-
-    .section-title {
-      font-size: 32px;
-      margin-bottom: 25px;
-      color: #111827;
-    }
-
-    .about {
-      background: white;
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-    }
-
-    .project-card {
-      background: white;
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.07);
-      transition: transform 0.2s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .project-card h3 {
-      color: #2563eb;
-      margin-bottom: 10px;
-    }
-
-    .tag {
-      display: inline-block;
-      background: #e0ecff;
-      color: #1d4ed8;
-      padding: 5px 10px;
-      border-radius: 20px;
-      font-size: 13px;
-      margin: 8px 5px 0 0;
-    }
-
-    .skills {
-      background: white;
-    }
-
-    .skills-list {
+    .nav-wrap {
+      min-height: 74px;
       display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
     }
 
-    .skills-list span {
-      background: #111827;
+    .brand {
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      font-size: 19px;
+    }
+
+    .brand span { color: var(--accent); }
+
+    nav {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 700;
+      color: #334155;
+    }
+
+    nav a { text-decoration: none; }
+    nav a:hover { color: var(--accent); }
+
+    .nav-button {
+      background: var(--dark);
       color: white;
       padding: 10px 15px;
-      border-radius: 30px;
-      font-size: 14px;
+      border-radius: 999px;
     }
 
-    .contact {
-      text-align: center;
-      background: #111827;
+    .hero { padding: 86px 0 64px; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(15, 118, 110, 0.10);
+      color: #0f766e;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+
+    h1 {
+      font-size: clamp(42px, 5vw, 68px);
+      line-height: 1.03;
+      letter-spacing: -0.06em;
+      margin-bottom: 22px;
+    }
+
+    .lead {
+      font-size: 19px;
+      color: #334155;
+      max-width: 720px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; margin-bottom: 28px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 14px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button.primary { background: var(--dark); color: white; box-shadow: 0 14px 30px rgba(7, 17, 31, 0.22); }
+    .button.secondary { background: white; color: var(--dark); border: 1px solid var(--line); }
+
+    .proof-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      max-width: 720px;
+    }
+    .proof {
+      background: rgba(255, 255, 255, 0.74);
+      border: 1px solid rgba(226, 232, 240, 0.78);
+      border-radius: 16px;
+      padding: 15px;
+    }
+    .proof strong { display: block; font-size: 22px; line-height: 1.1; color: var(--dark); }
+    .proof span { font-size: 12px; color: var(--muted); font-weight: 700; }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      box-shadow: var(--shadow);
+      border-radius: 32px;
+      padding: 24px;
+    }
+    .profile-box {
+      background: linear-gradient(145deg, #07111f, #12312f);
+      color: white;
+      border-radius: 26px;
+      padding: 26px;
+      min-height: 310px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      position: relative;
+    }
+    .profile-box:after {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      right: -90px;
+      top: -80px;
+      background: rgba(45, 212, 191, 0.16);
+    }
+    .profile-box h2 { font-size: 29px; line-height: 1.1; letter-spacing: -0.04em; max-width: 340px; position: relative; z-index: 1; }
+    .profile-box p { color: #cbd5e1; margin-top: 14px; position: relative; z-index: 1; }
+    .mini-stack { display: grid; gap: 10px; margin-top: 20px; position: relative; z-index: 1; }
+    .mini-item { display: flex; justify-content: space-between; gap: 14px; padding: 12px; border-radius: 14px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.10); }
+    .mini-item span { color: #a7f3d0; font-weight: 800; font-size: 13px; }
+    .mini-item b { color: white; font-size: 13px; text-align: right; }
+
+    section { padding: 72px 0; }
+    .section-head { display: flex; justify-content: space-between; gap: 24px; align-items: end; margin-bottom: 28px; }
+    .section-kicker { color: var(--accent); font-weight: 900; text-transform: uppercase; letter-spacing: 0.14em; font-size: 12px; margin-bottom: 8px; }
+    .section-title { font-size: clamp(31px, 4vw, 44px); line-height: 1.08; letter-spacing: -0.05em; }
+    .section-copy { color: var(--muted); max-width: 560px; font-size: 16px; }
+
+    .panel {
+      background: rgba(255,255,255,0.86);
+      border: 1px solid rgba(226,232,240,0.9);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .what-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .capability-card {
+      padding: 24px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 12px 28px rgba(15,23,42,0.06);
+    }
+    .icon {
+      width: 44px; height: 44px; border-radius: 14px;
+      display: grid; place-items: center;
+      font-weight: 900; margin-bottom: 15px;
+      background: var(--accent-soft); color: var(--accent);
+    }
+    .capability-card:nth-child(2) .icon { background: var(--blue-soft); color: var(--accent-2); }
+    .capability-card:nth-child(3) .icon { background: var(--purple-soft); color: var(--accent-3); }
+    .capability-card h3 { font-size: 19px; margin-bottom: 10px; letter-spacing: -0.02em; }
+    .capability-card p { color: var(--muted); font-size: 15px; }
+
+    .method {
+      background: var(--dark);
       color: white;
     }
-
-    .contact a {
-      color: #93c5fd;
-      text-decoration: none;
-      font-weight: 700;
+    .method .section-copy { color: #cbd5e1; }
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 30px; }
+    .step {
+      padding: 22px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.11);
     }
+    .step .num { color: #5eead4; font-weight: 900; margin-bottom: 16px; }
+    .step h3 { font-size: 18px; margin-bottom: 8px; }
+    .step p { color: #cbd5e1; font-size: 14px; }
 
-    footer {
-      background: #030712;
-      color: #d1d5db;
-      text-align: center;
+    .case-grid { display: grid; gap: 22px; }
+    .case-card {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 0;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .case-media {
+      background: #f8fafc;
+      border-right: 1px solid var(--line);
+      min-height: 330px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       padding: 20px;
-      font-size: 14px;
+    }
+    .case-media img { width: 100%; height: 100%; max-height: 360px; object-fit: contain; border-radius: 18px; background: white; }
+    .case-content { padding: 28px; }
+    .case-type { display: inline-block; color: var(--accent); font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 9px; }
+    .case-content h3 { font-size: 25px; line-height: 1.18; letter-spacing: -0.03em; margin-bottom: 14px; }
+    .case-block { margin-top: 17px; }
+    .case-block b { display: block; color: var(--dark); font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 5px; }
+    .case-block p { color: var(--muted); font-size: 15px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .chip { background: #f1f5f9; color: #334155; padding: 7px 10px; border-radius: 999px; font-size: 12px; font-weight: 800; }
+
+    .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .skill-card { background: white; border: 1px solid var(--line); border-radius: 22px; padding: 22px; box-shadow: 0 12px 28px rgba(15,23,42,0.05); }
+    .skill-card h3 { font-size: 17px; margin-bottom: 12px; }
+    .skill-card ul { list-style: none; display: grid; gap: 8px; }
+    .skill-card li { color: var(--muted); font-size: 14px; padding-left: 16px; position: relative; }
+    .skill-card li:before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); position: absolute; left: 0; top: 9px; }
+
+    .pub-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .pub-card { background: white; border: 1px solid var(--line); border-radius: 22px; padding: 22px; box-shadow: 0 12px 28px rgba(15,23,42,0.05); }
+    .pub-card h3 { font-size: 18px; margin-bottom: 10px; }
+    .pub-card p { color: var(--muted); font-size: 14px; }
+    .pub-label { display: inline-block; background: #f1f5f9; color: #334155; border-radius: 999px; padding: 6px 10px; font-size: 11px; font-weight: 900; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.08em; }
+
+    .contact-panel {
+      background: linear-gradient(145deg, #07111f, #12312f);
+      color: white;
+      border-radius: 32px;
+      padding: 34px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      align-items: center;
+    }
+    .contact-panel p { color: #cbd5e1; margin-top: 10px; }
+    .contact-links { display: grid; gap: 12px; }
+    .contact-links a { color: white; text-decoration: none; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); padding: 12px 14px; border-radius: 14px; font-weight: 800; }
+
+    footer { padding: 26px 0; color: var(--muted-2); font-size: 14px; text-align: center; }
+
+    @media (max-width: 980px) {
+      .hero-grid, .case-card, .contact-panel { grid-template-columns: 1fr; }
+      .what-grid, .skills-grid, .process-grid, .pub-grid { grid-template-columns: 1fr 1fr; }
+      .case-media { border-right: 0; border-bottom: 1px solid var(--line); }
     }
 
-    @media (max-width: 800px) {
-      .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .hero h1 {
-        font-size: 36px;
-      }
-
-      nav {
-        display: none;
-      }
+    @media (max-width: 720px) {
+      nav { display: none; }
+      .proof-row, .what-grid, .skills-grid, .process-grid, .pub-grid { grid-template-columns: 1fr; }
+      .section-head { display: block; }
+      .section-copy { margin-top: 12px; }
+      .hero { padding-top: 56px; }
     }
   </style>
 </head>
-
 <body>
-
   <header>
-    <h2>Mohammad Uzair Shah</h2>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="container nav-wrap">
+      <div class="brand">Mohammad Uzair <span>Shah</span></div>
+      <nav>
+        <a href="#what">What I Do</a>
+        <a href="#method">Method</a>
+        <a href="#work">Work Examples</a>
+        <a href="#skills">Skills</a>
+        <a href="#publications">Publications</a>
+        <a class="nav-button" href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <section class="hero">
-    <div>
-      <h1>Mohammad Uzair Shah</h1>
-      <h3>PhD Candidate | Bioenergy Systems | GIS | TEA | LCA</h3>
-      <p>
-        I develop data-driven decision support tools for sustainable bioenergy systems,
-        energy crop deployment, and biorefinery siting. My work integrates GIS,
-        process modeling, TEA, LCA, and spatial analysis to support better deployment decisions.
-      </p>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> Sustainability Analysis, Decision Support, Social LCA, and GIS Analytics</div>
+          <h1>I turn complex sustainability problems into defensible, data-driven decisions.</h1>
+          <p class="lead">
+            I work at the intersection of sustainability analysis, decision support analysis, GIS, data analytics, and systems modeling. My work evaluates complex integrated systems across environmental, economic, spatial, operational, and social dimensions, including TEA, LCA, social LCA, socio-economic analysis, risk screening, and scenario-based decision support for communities, investors, and public-sector stakeholders.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="Mohammad_Uzair_Shah_CV.pdf" target="_blank">Download CV</a>
+            <a class="button secondary" href="#work">View work examples</a>
+          </div>
+          <div class="proof-row">
+            <div class="proof"><strong>GIS + Data</strong><span>Spatial analytics and resource screening</span></div>
+            <div class="proof"><strong>TEA + LCA + Social LCA</strong><span>Cost, emissions, impact, and social risk modeling</span></div>
+            <div class="proof"><strong>Decision Support Analysis</strong><span>MCDA, scenario analysis, and tradeoff modeling</span></div>
+          </div>
+        </div>
 
-      <div class="buttons">
-        <a href="Mohammad_Uzair_Shah_CV.pdf" class="primary" target="_blank">Download CV</a>
-        <a href="#projects" class="secondary">View Projects</a>
+        <aside class="hero-card">
+          <div class="profile-box">
+            <div>
+              <h2>Sustainability analyst focused on integrated systems, decision intelligence, and implementation risk.</h2>
+              <p>PhD candidate and Graduate Research Assistant at the University of Tennessee, Knoxville.</p>
+            </div>
+            <div class="mini-stack">
+              <div class="mini-item"><span>Focus</span><b>Sustainable infrastructure and environmental systems</b></div>
+              <div class="mini-item"><span>Approach</span><b>Data analytics, GIS, MCDA, TEA, LCA, social LCA, and decision support</b></div>
+              <div class="mini-item"><span>Applications</span><b>Bioenergy, SAF, land use, logistics, environmental risk, and community impact</b></div>
+            </div>
+          </div>
+        </aside>
       </div>
-    </div>
+    </section>
 
-    <div class="profile-card">
-      <img src="profile.jpg" alt="Mohammad Uzair Shah">
-      <h3>Graduate Research Assistant</h3>
-      <p>University of Tennessee, Knoxville</p>
-    </div>
-  </section>
+    <section id="what">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">What I Do</div>
+            <h2 class="section-title">Sustainability analysis for complex integrated systems.</h2>
+          </div>
+          <p class="section-copy">
+            My portfolio is built around one theme: using data, models, and decision support analysis to make sustainability decisions more transparent, defensible, and implementation-ready.
+          </p>
+        </div>
 
-  <section id="about" class="about">
-    <h2 class="section-title">About Me</h2>
-    <p>
-      I am a PhD candidate in Biosystems Engineering at the University of Tennessee,
-      Knoxville. My research focuses on developing integrated decision support systems
-      for energy crop production and biorefinery deployment. I work at the intersection
-      of GIS, TEA, LCA, process modeling, and sustainability assessment.
-    </p>
-  </section>
-
-  <section id="projects">
-    <h2 class="section-title">Projects</h2>
-
-    <div class="projects-grid">
-
-      <div class="project-card">
-        <h3>Integrated DSS for Bioenergy Deployment</h3>
-        <p>
-          Developed a decision support model for identifying suitable sites for energy
-          crop production and biorefinery deployment using spatial, economic, and
-          environmental criteria.
-        </p>
-        <span class="tag">GIS</span>
-        <span class="tag">TEA</span>
-        <span class="tag">LCA</span>
+        <div class="what-grid">
+          <article class="capability-card">
+            <div class="icon">01</div>
+            <h3>Sustainability and environmental analysis</h3>
+            <p>I evaluate environmental impacts, emissions drivers, resource constraints, lifecycle hotspots, and deployment risks for low-carbon systems, with emphasis on practical decisions rather than isolated metrics.</p>
+          </article>
+          <article class="capability-card">
+            <div class="icon">02</div>
+            <h3>GIS, data analytics, and spatial intelligence</h3>
+            <p>I integrate land use, soil, infrastructure, demographic, socio-economic, environmental justice, and logistics data to identify feasible locations, spatial hotspots, exposure risks, and opportunity zones.</p>
+          </article>
+          <article class="capability-card">
+            <div class="icon">03</div>
+            <h3>Decision support analysis and consulting-style modeling</h3>
+            <p>I build decision-support workflows that connect technical performance, economics, environmental impacts, social LCA, community benefits, and implementation risk into clear outputs for planning and strategy.</p>
+          </article>
+          <article class="capability-card">
+            <div class="icon">04</div>
+            <h3>Social analysis and implementation risk</h3>
+            <p>I assess how sustainability decisions affect communities, workers, regional economies, and underserved populations using social LCA, socio-economic indicators, I-O modeling, and environmental justice screening.</p>
+          </article>
+        </div>
       </div>
+    </section>
 
-      <div class="project-card">
-        <h3>GIS-Based Pastureland Suitability Analysis</h3>
-        <p>
-          Conducted high-resolution spatial screening of Tennessee pastureland using
-          land use, soil pH, slope, parcel size, and supply radius constraints.
-        </p>
-        <span class="tag">GeoPandas</span>
-        <span class="tag">Spatial Analysis</span>
-        <span class="tag">Python</span>
+    <section id="method" class="method">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">How I Work</div>
+            <h2 class="section-title">From messy data to defensible recommendations.</h2>
+          </div>
+          <p class="section-copy">
+            I structure projects like decision problems: define the question, build the evidence base, model tradeoffs, evaluate uncertainty, and translate results into actionable recommendations.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <div class="step"><div class="num">01</div><h3>Frame the decision</h3><p>Clarify what choice the analysis supports, such as siting, screening, risk reduction, or investment prioritization.</p></div>
+          <div class="step"><div class="num">02</div><h3>Build the data layer</h3><p>Curate spatial, environmental, operational, cost, emissions, and socio-economic datasets into an analysis-ready structure.</p></div>
+          <div class="step"><div class="num">03</div><h3>Model tradeoffs</h3><p>Use GIS, Python, TEA, LCA, social LCA, logistics modeling, MCDA, hotspot analysis, sensitivity analysis, and scenario planning to quantify cost, impact, feasibility, equity, risk, and uncertainty.</p></div>
+          <div class="step"><div class="num">04</div><h3>Communicate outputs</h3><p>Translate technical results into maps, dashboards, ranked alternatives, risk matrices, sensitivity plots, implementation roadmaps, and decision-ready summaries.</p></div>
+        </div>
       </div>
+    </section>
 
-      <div class="project-card">
-        <h3>Mxg Production TEA and LCA</h3>
-        <p>
-          Built a 15-year production model to estimate normalized costs and emissions
-          for Mxg cultivation under different land rent and discount rate scenarios.
-        </p>
-        <span class="tag">TEA</span>
-        <span class="tag">LCA</span>
-        <span class="tag">Modeling</span>
+    <section id="work">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Work Examples</div>
+            <h2 class="section-title">Applied examples of my sustainability analysis workflow.</h2>
+          </div>
+          <p class="section-copy">
+            These examples are framed as applied decision problems. Bioenergy is the main case study, but the methods transfer to sustainability consulting, environmental analysis, climate strategy, infrastructure planning, environmental justice screening, and EHS-adjacent analytics.
+          </p>
+        </div>
+
+        <div class="case-grid">
+          <article class="case-card">
+            <div class="case-media"><img src="assets/integrated-decision-support.png" alt="Integrated decision support model diagram"></div>
+            <div class="case-content">
+              <span class="case-type">Decision support analysis</span>
+              <h3>Integrated model for sustainable infrastructure siting</h3>
+              <div class="case-block"><b>Problem</b><p>Where should energy crop supply and SAF-related infrastructure be deployed when land, logistics, economics, environmental impact, and community context all matter at the same time?</p></div>
+              <div class="case-block"><b>Approach</b><p>Designed a Python-based decision support model that connects crop production, transportation and logistics, biorefinery process modeling, TEA, LCA, social LCA, socio-economic analysis, GIS, and visualization layers.</p></div>
+              <div class="case-block"><b>Output</b><p>Decision-ready outputs that compare feasible regions, quantify tradeoffs, identify environmental and social hotspots, and support site screening for investors, researchers, public-sector stakeholders, and community-centered planning.</p></div>
+              <div class="case-block"><b>Impact</b><p>Moves sustainability analysis beyond single-metric feasibility by linking technical, economic, environmental, spatial, social, and implementation-risk dimensions into one systematic workflow.</p></div>
+              <div class="chips"><span class="chip">Python</span><span class="chip">GIS</span><span class="chip">TEA</span><span class="chip">LCA</span><span class="chip">Social LCA</span><span class="chip">Decision support analysis</span></div>
+            </div>
+          </article>
+
+          <article class="case-card">
+            <div class="case-media"><img src="assets/spatial-decision-layers.png" alt="Layered GIS decision criteria concept"></div>
+            <div class="case-content">
+              <span class="case-type">Spatial intelligence and hotspot analysis</span>
+              <h3>Layered GIS screening for regional hotspots and opportunity zones</h3>
+              <div class="case-block"><b>Problem</b><p>County-level averages hide local variation. For real deployment decisions, analysts need a way to combine land, environmental, infrastructure, and socio-economic criteria at finer spatial resolution.</p></div>
+              <div class="case-block"><b>Approach</b><p>Built a layer-by-layer spatial screening workflow that adds decision criteria, applies multi-criteria decision analysis, computes suitability, and identifies candidate regions that satisfy land, infrastructure, environmental, and socio-economic constraints.</p></div>
+              <div class="case-block"><b>Output</b><p>Ranked and mapped hotspots, opportunity zones, and constrained regions that can guide deeper feasibility analysis, stakeholder engagement, risk screening, and scenario comparison.</p></div>
+              <div class="case-block"><b>Impact</b><p>Provides a transparent analytical structure for consulting-style recommendations, not just maps. The same logic can support renewable energy, waste, land use, and environmental planning problems.</p></div>
+              <div class="chips"><span class="chip">Spatial decision analysis</span><span class="chip">MCDA</span><span class="chip">Hotspot analysis</span><span class="chip">Resource mapping</span><span class="chip">Optimization</span></div>
+            </div>
+          </article>
+
+          <article class="case-card">
+            <div class="case-media">
+              <div style="width:100%; min-height:290px; border:2px dashed #cbd5e1; border-radius:22px; display:grid; place-items:center; padding:28px; text-align:center; color:#64748b; background:#f8fafc;">
+                <div>
+                  <strong style="display:block; color:#0f172a; font-size:22px; margin-bottom:8px;">Add map or plot after publication</strong>
+                  <span>Recommended visual: cost sensitivity, emissions contribution, logistics map, or suitability map.</span>
+                </div>
+              </div>
+            </div>
+            <div class="case-content">
+              <span class="case-type">Sustainability, TEA, LCA, and social LCA</span>
+              <h3>Integrated TEA, LCA, social LCA, and scenario analysis</h3>
+              <div class="case-block"><b>Problem</b><p>Sustainability projects often fail when feasibility is judged too narrowly. Cost, emissions, supply risk, land constraints, environmental justice, worker and community impacts, and implementation risk need to be assessed together.</p></div>
+              <div class="case-block"><b>Approach</b><p>Developed system-level models to estimate lifecycle emissions, environmental impacts, economic feasibility, social performance indicators, and uncertainty under changing assumptions such as land rent, discount rate, yield, logistics, and operating conditions.</p></div>
+              <div class="case-block"><b>Output</b><p>Scenario results, sensitivity analysis, normalized cost and emissions metrics, social risk indicators, contribution analysis, and interpretation of key drivers affecting project feasibility.</p></div>
+              <div class="case-block"><b>Impact</b><p>Supports sustainability strategy by showing which assumptions matter most, where lifecycle hotspots occur, and where operational, policy, or community-focused changes can improve outcomes.</p></div>
+              <div class="chips"><span class="chip">Scenario analysis</span><span class="chip">Sensitivity analysis</span><span class="chip">Hotspot analysis</span><span class="chip">Environmental impact</span><span class="chip">Social LCA</span><span class="chip">Economic feasibility</span></div>
+            </div>
+          </article>
+
+          <article class="case-card">
+            <div class="case-media">
+              <div style="width:100%; min-height:290px; border:2px dashed #cbd5e1; border-radius:22px; display:grid; place-items:center; padding:28px; text-align:center; color:#64748b; background:#f8fafc;">
+                <div>
+                  <strong style="display:block; color:#0f172a; font-size:22px; margin-bottom:8px;">Add EHS or compliance example later</strong>
+                  <span>Recommended visual: audit checklist logic, risk matrix, waste flow, ISO documentation workflow, or compliance dashboard.</span>
+                </div>
+              </div>
+            </div>
+            <div class="case-content">
+              <span class="case-type">EHS-adjacent analytics</span>
+              <h3>Environmental risk, compliance, and operational performance support</h3>
+              <div class="case-block"><b>Problem</b><p>Environmental and sustainability teams need organized data systems to track risk, compliance tasks, waste streams, audit findings, and operational improvement opportunities.</p></div>
+              <div class="case-block"><b>Approach</b><p>Apply data curation, reporting, environmental analysis, process understanding, and systems thinking to structure evidence for compliance and improvement decisions.</p></div>
+              <div class="case-block"><b>Output</b><p>Clear documentation, indicators, dashboards, and decision logic that can support EHS managers, sustainability teams, and cross-functional operations staff.</p></div>
+              <div class="case-block"><b>Impact</b><p>Positions environmental work as both compliance support and performance improvement, connecting risk reduction with measurable sustainability outcomes.</p></div>
+              <div class="chips"><span class="chip">Environmental reporting</span><span class="chip">Risk screening</span><span class="chip">Data management</span><span class="chip">Operational analysis</span></div>
+            </div>
+          </article>
+        </div>
       </div>
+    </section>
 
-      <div class="project-card">
-        <h3>Biorefinery Siting and Logistics</h3>
-        <p>
-          Integrated feedstock availability, industrial parcel screening, transport
-          logistics, and supply radius analysis to evaluate candidate biorefinery sites.
-        </p>
-        <span class="tag">OSMnx</span>
-        <span class="tag">NetworkX</span>
-        <span class="tag">Optimization</span>
+    <section id="skills">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Capabilities</div>
+            <h2 class="section-title">Skills organized around business problems.</h2>
+          </div>
+          <p class="section-copy">Rather than a long list of tools, these are the capability areas I bring to sustainability analyst, environmental analyst, consulting analyst, GIS analyst, and EHS-adjacent roles.</p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-card"><h3>Data analytics and programming</h3><ul><li>Python</li><li>Data curation and cleaning</li><li>Scenario modeling</li><li>Automation-ready workflows</li><li>Data visualization and reporting</li></ul></div>
+          <div class="skill-card"><h3>GIS and spatial analytics</h3><ul><li>ArcGIS Pro</li><li>GeoPandas</li><li>Spatial overlay and suitability screening</li><li>Clustering, hotspot analysis, and opportunity mapping</li><li>Supply radius, logistics, and network analysis</li></ul></div>
+          <div class="skill-card"><h3>Sustainability and environmental analysis</h3><ul><li>TEA</li><li>LCA and social LCA</li><li>Environmental impact and lifecycle hotspot analysis</li><li>Resource, land-use, and emissions assessment</li><li>Low-carbon systems evaluation</li></ul></div>
+          <div class="skill-card"><h3>Decision, policy, and social analysis</h3><ul><li>Decision support analysis</li><li>MCDA and tradeoff analysis</li><li>Socio-economic analysis and I-O modeling</li><li>Environmental justice and community benefit indicators</li><li>Risk screening and implementation readiness</li></ul></div>
+        </div>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <section id="publications">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Publications and Communication</div>
+            <h2 class="section-title">Research, writing, and technical communication.</h2>
+          </div>
+          <p class="section-copy">Selected publications and presentations that show both technical depth and the ability to communicate sustainability analysis.</p>
+        </div>
 
-  <section id="skills" class="skills">
-    <h2 class="section-title">Technical Skills</h2>
-    <div class="skills-list">
-      <span>Python</span>
-      <span>GeoPandas</span>
-      <span>ArcGIS Pro</span>
-      <span>OSMnx</span>
-      <span>NetworkX</span>
-      <span>Shapely</span>
-      <span>BioSTEAM</span>
-      <span>TEA</span>
-      <span>LCA</span>
-      <span>Spatial Optimization</span>
-      <span>Process Modeling</span>
-      <span>Data Visualization</span>
-    </div>
-  </section>
+        <div class="pub-grid">
+          <article class="pub-card"><span class="pub-label">Peer-reviewed article</span><h3>Techno-economic and socio-environmental planning of wind farms</h3><p>Sustainable Energy Technologies and Assessments, 2023. Case study on sustainable wind development, decarbonization planning, and social-environmental considerations.</p></article>
+          <article class="pub-card"><span class="pub-label">Under review</span><h3>GIS clustering and dynamic process modeling for Mxg production in Tennessee</h3><p>Submitted to Journal of Cleaner Production. Focused on integrated GIS and process modeling for identifying suitable sites for Mxg production.</p></article>
+          <article class="pub-card"><span class="pub-label">Published column</span><h3>From Feasible to Fragile</h3><p>Biofuels Digest, 2026. A practitioner-facing column on why bioeconomy projects can stall when models do not capture real deployment risks.</p></article>
+          <article class="pub-card"><span class="pub-label">Presentations</span><h3>GIS-based decision support for energy crop systems</h3><p>Presented work at ASABE Annual International Meeting, S1075 Multi-state Project Meeting, and Frontiers in Biorefining.</p></article>
+        </div>
+      </div>
+    </section>
 
-  <section id="contact" class="contact">
-    <h2 class="section-title">Contact</h2>
-    <p>Email: <a href="mailto:your.email@utk.edu">mshah17@vols.utk.edu</a></p>
-    <p>LinkedIn: <a href="#" target="_blank">www.linkedin.com/in/mohammad-uzair-shah</a></p>
-    <p>GitHub: <a href="https://github.com/Uzair1shah" target="_blank">github.com/Uzair1shah</a></p>
-  </section>
+    <section id="contact">
+      <div class="container">
+        <div class="contact-panel">
+          <div>
+            <div class="section-kicker">Contact</div>
+            <h2 class="section-title">Let’s connect.</h2>
+            <p>I am interested in environmental analyst, sustainability analyst, GIS/data analyst, and consulting roles where data-driven sustainability analysis supports real decisions.</p>
+          </div>
+          <div class="contact-links">
+            <a href="mailto:mshah17@tennessee.edu">mshah17@tennessee.edu</a>
+            <a href="https://www.linkedin.com/" target="_blank">LinkedIn, replace with your profile link</a>
+            <a href="Mohammad_Uzair_Shah_CV.pdf" target="_blank">Download CV</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2026 Mohammad Uzair Shah. All rights reserved.</p>
+    <div class="container">© 2026 Mohammad Uzair Shah. Sustainability analytics, GIS, and decision support portfolio.</div>
   </footer>
-
 </body>
 </html>
